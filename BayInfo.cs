@@ -25,7 +25,7 @@ public static class BayInfo
                     __result += "\nGreenhouse rating: " + greenHouseRating + "%";
                     if (greenHouseRating > 1f)
                     {
-                        growthMultiplier *= 3;
+                        growthMultiplier *= 2;
                     }
                 }
 

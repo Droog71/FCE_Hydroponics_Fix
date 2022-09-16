@@ -40,7 +40,7 @@ public static class PlantEntityFix
             {
                 if (__instance.mRoomController.mrGreenhouseRating > 1f)
                 {
-                    growthScalar *= 3f;
+                    growthScalar *= 2f;
                 }
             }
             if (__instance.mbReadyForHarvest == false)
