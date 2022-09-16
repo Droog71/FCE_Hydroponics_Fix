@@ -23,7 +23,7 @@ public static class BayInfo
                     float ghrf = __instance.mPlant.mRoomController.mrGreenhouseRating;
                     int greenHouseRating = (int) (ghrf * 100);
                     __result += "\nGreenhouse rating: " + greenHouseRating + "%";
-                    if (greenHouseRating > 1f)
+                    if (greenHouseRating > 100)
                     {
                         growthMultiplier *= 2;
                     }
