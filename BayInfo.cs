@@ -5,6 +5,8 @@ public static class BayInfo
 {
     static void Postfix(HydroponicsBay __instance, ref string __result)
     {
+        bool foundRoomController = true;
+
         if (__instance != null)
         {
             if (__instance.mPlant != null)
@@ -15,7 +17,7 @@ public static class BayInfo
 
                 if (__instance.mPlant.mbOnAdvancedHydroBay)
                 {
-                    growthMultiplier += 15;
+                    growthMultiplier = 30;
                 }
 
                 if (__instance.mPlant.mRoomController != null)
@@ -28,14 +30,19 @@ public static class BayInfo
                         growthMultiplier *= 2;
                     }
                 }
+                else
+                {
+                    foundRoomController = false;
+                }
 
                 __result += "\nGrowth multiplier: " + growthMultiplier + "x";
             }
-            else
+
+            if (foundRoomController == false)
             {
-                __result += "\nPlant not found!";
+                __result += "\n\nRoom controller not found.";
+                __result += "\nPlease relocate bay.";
             }
         }
     }
 }
-
